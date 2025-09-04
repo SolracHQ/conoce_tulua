@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvvctmvk66net"]
+
+[ext_resource type="Script" uid="uid://b5xefh1jiu0qv" path="res://scripts/npc.gd" id="1_cush0"]
+[ext_resource type="Texture2D" uid="uid://dk4k66q7r0kd5" path="res://sprites/Characters_V3_Colour.png" id="2_5xgx0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b0kkn"]
+size = Vector2(16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("2_5xgx0")
+region = Rect2(0, 0, 160, 320)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_cush0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_b0kkn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_i3pqv")
+hframes = 10
+vframes = 20
