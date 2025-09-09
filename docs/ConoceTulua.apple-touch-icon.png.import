@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyc40w7qmu0bl"
-path="res://.godot/imported/ConoceTulua.apple-touch-icon.png-63992acd0965a7624c39743d9122538b.ctex"
+path="res://.godot/imported/ConoceTulua.apple-touch-icon.png-5039fe7ce1976fc01213cfe7517e62a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://docs/ConoceTulua.apple-touch-icon.png"
-dest_files=["res://.godot/imported/ConoceTulua.apple-touch-icon.png-63992acd0965a7624c39743d9122538b.ctex"]
+source_file="res://out/web/ConoceTulua.apple-touch-icon.png"
+dest_files=["res://.godot/imported/ConoceTulua.apple-touch-icon.png-5039fe7ce1976fc01213cfe7517e62a6.ctex"]
 
 [params]
 
