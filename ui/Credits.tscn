@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5qlxyctq7jp6"]
+
+[ext_resource type="FontFile" uid="uid://dptlysupchpf3" path="res://fonts/Born2bSportyV10.ttf" id="1_bwjgb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogi12"]
+bg_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+
+[node name="Credits" type="CanvasLayer"]
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 489.0
+offset_bottom = 280.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ogi12")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 481.0
+offset_bottom = 283.0
+
+[node name="title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bwjgb")
+text = "Créditos"
+horizontal_alignment = 1
+
+[node name="CreditsText" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bwjgb")
+theme_override_font_sizes/font_size = 9
+text = "Información sobre Tuluá, Colombia
+https://tulua.gov.co/publicaciones/6282/lago-chilicote-un-nuevo-impulso-al-turismo-en-tulua/
+https://www.livevalledelcauca.com/tulua/lago-chillicotte.html
+https://tulua.gov.co/publicaciones/6282/lago-chilicote-un-nuevo-impulso-al-turismo-en-tulua/
+https://www.tripadvisor.co/Attraction_Review-g1598746-d11750491-Reviews-Parque_de_la_Guadua-Tulua_Valle_del_Cauca_Department.html
+http://parquedelaguadua.com/
+https://parquedelaguadua.com/nuestra-historia/
+https://es.wikipedia.org/wiki/Estadio_Doce_de_Octubre
+https://iemariaantoniaruiz.edu.co/sedes.html 
+https://iemariaantoniaruiz.edu.co/
+https://www.livevalledelcauca.com/tulua/plaza-civica-boyaca.html 
+https://es.wikipedia.org/wiki/Tulu%C3%A1
+
+# Recursos del juego
+Tileset: https://nyknck.itch.io/citypackpixelart
+Characters: https://itch.io/queue/c/1113979/16x16-characters?game_id=1521783
+
+# Creado por
+Juan Manuel Lizalda"
+clip_text = true

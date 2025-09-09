@@ -47,6 +47,23 @@ func open(source: NPC) -> void:
 	print("[Textbox] open: source=%s, full_text_len=%d" % [str(source_node), full_text.length()])
 	_show_current_page()
 
+
+func open_text(msg: String) -> void:
+	# Open the textbox with a raw string (not tied to an NPC). Useful for help/info messages.
+	if msg == "":
+		msg = "..."
+	# clear any source node so we don't call back into an NPC
+	source_node = null
+	full_text = msg
+	rlabel.text = full_text
+	rlabel.queue_redraw()
+	current_line = 0
+	is_open = true
+	visible = true
+	emit_signal("dialog_opened", null)
+	print("[Textbox] open_text: msg_len=%d" % full_text.length())
+	_show_current_page()
+
 func close() -> void:
 	# call source cleanup if available
 	if source_node and source_node.has_method("end_dialog"):

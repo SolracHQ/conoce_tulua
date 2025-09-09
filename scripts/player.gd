@@ -41,10 +41,27 @@ func _ready() -> void:
 
 	# find Textbox child if present
 	textbox = get_node_or_null("Textbox")
+	# show an initial help dialog in Spanish when the player spawns
+	if textbox and textbox.has_method("open_text"):
+		var help_msg := "Controles: Moverse con WASD. Presiona Espacio para\n"
+		help_msg += "hablar con NPCs. Presiona Esc para abrir el menú.\n"
+		help_msg += "Bienvenido a conoce Tulua, recorre esta hermosa ciudad y\n"
+		help_msg += "habla con sus habitantes para descubrir todo acerca de la ciudad."
+		textbox.call("open_text", help_msg)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# If a textbox is open, block movement but still allow action button to advance dialog
+	if textbox and textbox.is_busy():
+		# ensure player stops moving
+		velocity = Vector2.ZERO
+		# show idle animation facing the same direction
+		_update_animation(Vector2.ZERO, delta)
+		# still allow action handling to advance or close the textbox
+		_handle_action()
+		return
+
 	# Read input, apply movement, update animation, then handle action
 	var direction := _read_input()
 
@@ -155,6 +172,12 @@ func _handle_action() -> void:
 
 	# store previous action state
 	action_pressed_last = action_now
+
+	# allow cancel/menu (Esc) to close dialog immediately when open
+	if (Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("menu")):
+		if textbox and textbox.is_busy():
+			print("[Player] menu pressed: closing textbox")
+			textbox.close()
 
 
 func _physics_process(_delta: float) -> void:
